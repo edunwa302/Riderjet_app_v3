@@ -295,8 +295,8 @@
                 Food Delivery Enugu
               </h3>
               <p class="text-gray-500 text-sm leading-relaxed">
-                Hot meals from your favourite Enugu restaurants delivered to
-                your door — fast and fresh by our dispatch riders.
+                Hot meals and Shawamar from your favourite Enugu restaurants
+                delivered to your door — fast and fresh by our dispatch riders.
               </p>
             </article>
 
