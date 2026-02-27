@@ -150,7 +150,7 @@
             class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4"
           >
             <span class="text-white"
-              >Welcome to Riderjet Logistics - Your Package, Our Mission.</span
+              >Welcome! - Your Package, Our Mission.</span
             >
             <span
               class="block text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-300"
@@ -160,13 +160,14 @@
           </h1>
 
           <p
-            class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed"
+            class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-4 leading-relaxed"
           >
             Trusted courier &amp; logistics service across Enugu — food
-            delivery, parcel dispatch, document pickup, business errands, and
-            more.
-            <strong class="text-white"> Safe, Fast and Reliable.</strong>
+            delivery, parcel dispatch, document pickup, errands, and more.
           </p>
+          <h6 class="mb-4">
+            <strong class="text-white"> Safe, Fast and Reliable.</strong>
+          </h6>
 
           <!-- Hero CTA buttons -->
           <div
