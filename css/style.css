@@ -290,3 +290,36 @@
            px-4 py-2.5 rounded-xl transition-colors duration-200;
   }
 }
+
+/* ---------- Page marquee (coverage areas) ---------- */
+#coverage-marquee .page-marquee-wrapper {
+  overflow: hidden;
+}
+
+#coverage-marquee .page-marquee-content {
+  display: flex;
+  gap: 2rem;
+  animation: page-marquee 30s linear infinite;
+  will-change: transform;
+}
+
+#coverage-marquee .page-marquee-item {
+  white-space: nowrap;
+  font-weight: 600;
+  color: #047857;
+  font-size: 0.95rem;
+  padding: 0 1rem;
+}
+
+@keyframes page-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#coverage-marquee .page-marquee-wrapper:hover .page-marquee-content {
+  animation-play-state: paused;
+}
