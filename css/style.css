@@ -1,0 +1,292 @@
+/* ============================================================
+   Riderjet Logistics – Main Stylesheet
+   Tailwind CSS v3 base + custom overrides
+============================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   GOOGLE FONTS – imported via index.html link tag
+   Geist (display headings) + Inter (body text)
+============================================================ */
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+============================================================ */
+:root {
+  --font-display: "Geist", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --shadow-green: 0 10px 40px rgba(22, 163, 74, 0.25);
+  --transition: 200ms ease;
+}
+
+/* ============================================================
+   BASE RESETS
+============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  address {
+    font-style: normal;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@layer utilities {
+  /* Pulsing dot */
+  @keyframes pulseDot {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+  }
+
+  /* Fade up – hero entrance */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Float – WhatsApp button bob */
+  @keyframes floatWA {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .animate-pulse-dot {
+    animation: pulseDot 2s ease-in-out infinite;
+  }
+
+  .animate-float-wa {
+    animation: floatWA 3s ease-in-out infinite;
+  }
+
+  /* Hero staggered entrance */
+  .hero-animate {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-delay-1 {
+    animation-delay: 0.1s;
+  }
+  .hero-delay-2 {
+    animation-delay: 0.25s;
+  }
+  .hero-delay-3 {
+    animation-delay: 0.4s;
+  }
+  .hero-delay-4 {
+    animation-delay: 0.55s;
+  }
+
+  /* Scroll-reveal base state */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 {
+    transition-delay: 0.1s;
+  }
+  .reveal-delay-2 {
+    transition-delay: 0.2s;
+  }
+  .reveal-delay-3 {
+    transition-delay: 0.3s;
+  }
+  .reveal-delay-4 {
+    transition-delay: 0.4s;
+  }
+}
+
+/* ============================================================
+   COMPONENTS
+============================================================ */
+@layer components {
+  /* ---------- Gradient text (hero H1 line-2) ---------- */
+  .gradient-text {
+    background: linear-gradient(90deg, #4ade80, #6ee7b7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ---------- Speed-lines hero background pattern ---------- */
+  .hero-lines-bg {
+    background-image: repeating-linear-gradient(
+      105deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.4) 40px,
+      rgba(255, 255, 255, 0.4) 41px
+    );
+  }
+
+  /* ---------- Display font utility ---------- */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* ---------- Green glow shadow ---------- */
+  .shadow-green {
+    box-shadow: var(--shadow-green);
+  }
+  .shadow-green-lg {
+    box-shadow: 0 16px 48px rgba(22, 163, 74, 0.35);
+  }
+
+  /* ---------- Floating WhatsApp button ---------- */
+  .wa-float {
+    @apply fixed bottom-6 right-5 z-50 flex items-center gap-2
+           bg-green-500 hover:bg-green-600 active:scale-95
+           text-white font-bold text-sm px-4 py-3 rounded-full
+           transition-all duration-200;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.45);
+    animation: floatWA 3s ease-in-out infinite;
+  }
+  .wa-float:hover {
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.55);
+    transform: translateY(-3px) scale(1.03);
+    animation: none; /* pause float on hover */
+  }
+
+  /* ---------- Sticky header ---------- */
+  .site-header {
+    @apply sticky top-0 z-40 border-b border-gray-100 shadow-sm;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* ---------- Brand icon pill ---------- */
+  .brand-icon-wrap {
+    @apply w-9 h-9 rounded-lg flex items-center justify-center shadow flex-shrink-0;
+    background: linear-gradient(135deg, #22c55e, #047857);
+  }
+
+  /* ---------- Nav CTA button ---------- */
+  .nav-cta {
+    @apply bg-green-600 hover:bg-green-700 active:scale-97 text-white
+           text-sm font-bold px-4 py-2 rounded-full transition-all duration-200;
+  }
+
+  /* ---------- Hero badge ---------- */
+  .hero-badge {
+    @apply inline-flex items-center gap-1.5 text-green-300 text-xs font-bold
+           px-3 py-1.5 rounded-full uppercase tracking-widest mb-6;
+    background: rgba(22, 163, 74, 0.18);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+  }
+
+  /* ---------- Primary CTA button ---------- */
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 bg-green-500 hover:bg-green-400
+           active:scale-97 text-white font-extrabold text-base sm:text-lg
+           px-8 py-4 rounded-2xl transition-all duration-200;
+    box-shadow: 0 8px 32px rgba(22, 163, 74, 0.35);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 12px 40px rgba(22, 163, 74, 0.45);
+    transform: translateY(-2px);
+  }
+
+  /* ---------- Outline button (phone) ---------- */
+  .btn-outline {
+    @apply inline-flex items-center gap-2
+           text-white font-semibold text-base
+           px-6 py-4 rounded-2xl transition-all duration-200;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- Big CTA button ---------- */
+  .btn-cta-big {
+    @apply inline-flex items-center gap-3 bg-green-600 hover:bg-green-500
+           active:scale-97 text-white font-extrabold text-xl
+           px-10 py-5 rounded-2xl transition-all duration-200;
+    box-shadow: var(--shadow-green);
+  }
+  .btn-cta-big:hover {
+    box-shadow: 0 16px 48px rgba(22, 163, 74, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* ---------- Service card ---------- */
+  .service-card {
+    @apply bg-white rounded-2xl p-6 shadow-sm border border-gray-100
+           hover:shadow-md hover:-translate-y-1 transition-all duration-200;
+  }
+
+  /* ---------- Why / benefit card ---------- */
+  .why-card {
+    @apply text-center p-6 rounded-2xl bg-gray-50 transition-all duration-200;
+  }
+  .why-card:hover {
+    transform: translateY(-3px);
+  }
+
+  /* ---------- Online pulse badge ---------- */
+  .online-badge {
+    @apply inline-flex items-center gap-2 bg-green-50 border border-green-200
+           text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-6;
+  }
+
+  /* ---------- Step icon boxes ---------- */
+  .step-icon-box {
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center;
+  }
+
+  /* ---------- Step number badge ---------- */
+  .step-num {
+    @apply absolute -top-2 -right-2 w-6 h-6 rounded-full
+           flex items-center justify-center text-xs font-extrabold text-white;
+  }
+
+  /* ---------- Social link button ---------- */
+  .social-btn {
+    @apply inline-flex items-center gap-2 text-sm transition-colors duration-200;
+  }
+  .social-btn-wa {
+    @apply bg-green-600 hover:bg-green-500 text-white font-semibold
+           px-4 py-2.5 rounded-xl transition-colors duration-200;
+  }
+}

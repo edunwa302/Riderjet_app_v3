@@ -1,21 +1,15 @@
 {
   "name": "rider_app_v3",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "main": "main.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "vue": "^3.5.25"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.2",
-    "autoprefixer": "^10.4.27",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.19",
-    "vite": "^7.3.1"
+    "tailwindcss": "^3.4.19"
   }
 }
