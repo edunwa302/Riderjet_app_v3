@@ -1849,8 +1849,7 @@ address {
 #coverage-marquee .page-marquee-content {
   display: flex;
   gap: 2rem;
-  animation: page-marquee 30s linear infinite;
-  will-change: transform;
+  animation: page-marquee 8s linear infinite;
 }
 
 #coverage-marquee .page-marquee-item {
