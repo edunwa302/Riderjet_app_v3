@@ -149,7 +149,9 @@
           <h1
             class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4"
           >
-            <span class="text-white">Fast Dispatch Riders &amp;</span>
+            <span class="text-white"
+              >Welcome to Riderjet Logistics - Your Package, Our Mission.</span
+            >
             <span
               class="block text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-300"
             >
