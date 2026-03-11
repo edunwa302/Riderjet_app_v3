@@ -6,6 +6,16 @@
 "use strict";
 
 /* ============================================================
+   0. DYNAMIC YEAR – auto-update copyright year
+============================================================ */
+(function initDynamicYear() {
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+})();
+
+/* ============================================================
    1. SCROLL REVEAL
    Uses IntersectionObserver to animate elements with class
    .reveal into view as they enter the viewport.
@@ -75,6 +85,7 @@
     "Ogui Road",
     "Old Park",
     "Agbani Road",
+    "Holy Ghost",
     "Achara Layout",
     "Independence Layout",
     "GRA",
@@ -102,7 +113,18 @@
     "Amaorji Nike",
     "Gariki",
     "One Day",
-    "etc",
+    "P and T",
+    "GRA Phase 2",
+    "Golf Estate",
+    "Goshen Estate",
+    "Centenary city",
+    "Bricks",
+    "Premier Layout",
+    "Eke",
+    "Akanu Ibiam International Airport Enugu",
+    "Elim Estate",
+    "Ogbete Main Market",
+    "Caritas University",
   ];
 
   const container = document.querySelector(
